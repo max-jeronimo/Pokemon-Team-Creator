@@ -1,15 +1,39 @@
-# Node
-node_modules/
-.next/
+# Secrets / API Keys
+# backend FastAPI env — holds SUPABASE_SECRET_KEY (service_role, bypasses RLS)
+.env
+# any suffixed env file: .env.production, .env.staging, etc.
+.env.*
+# exception: DO track the template, which documents which keys are needed
+!.env.example
+# Next.js machine-specific overrides: .env.local, .env.development.local, etc.
 .env*.local
 
-# Python
+# Python Backend
+# virtual environment which is regenerable from requirements.txt
 venv/
+# Python bytecode cache dirs, anywhere in the tree
 __pycache__/
+# individual compiled Python files
 *.pyc
-.env
+
+# Node Frontend
+# npm dependencies which is regenerable from package.json
+node_modules/
+# Next.js build output which is generated on every build
+.next/
+
+# Cached data
+# cached Smogon usage JSON which is refetched on every build
+backend/CHAOS_FILES/
 
 # Editor
+# VS Code personal workspace settings 
 .vscode/
+# macOS folder metadata
 .DS_Store
+# Windows thumbnail cache
 Thumbs.db
+
+# Session Log
+# rolling session log
+SESSION_LOG.md
